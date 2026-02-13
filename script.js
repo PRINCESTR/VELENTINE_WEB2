@@ -311,7 +311,7 @@ const SLIDER_DATA = [
     },
     {
         type: 'image',
-        url: 'image2.jpeg' // Different image for the slider (vs image4.jpeg in Gift Box)
+        url: 'imagep.jpeg' 
     },
     {
         type: 'text',
@@ -324,7 +324,9 @@ function initGallery() {
     const container = document.getElementById('galleryContainer');
     container.innerHTML = ''; // Clear previous
 
-    MEMORIES.forEach(mem => {
+    const items = (Array.isArray(SLIDER_DATA) && SLIDER_DATA.length) ? SLIDER_DATA : MEMORIES;
+
+    items.forEach(mem => {
         const div = document.createElement('div');
         div.className = 'memory-card';
 
